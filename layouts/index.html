@@ -1,0 +1,37 @@
+{{ define "main" }}
+<section class="hero">
+  <p class="eyebrow">MOM'S BACKLOG</p>
+  <h1>A product manager's backlog<br>for raising a neurodivergent kid.</h1>
+  <p class="positioning">{{ .Site.Params.positioning }}</p>
+</section>
+
+<section class="backlog" id="backlog">
+  <div class="section-heading">
+    <h2>Backlog</h2>
+    <span class="section-note">Real problems. Shipped fixes. Honest status.</span>
+  </div>
+  <div class="ticket-list">
+    {{ range (where .Site.RegularPages "Section" "case-studies").ByParam "weight" }}
+    <a class="ticket-card" href="{{ .RelPermalink }}">
+      <div class="ticket-meta">
+        <span class="ticket-id">{{ .Params.ticket_id }}</span>
+        <span class="status-badge status-{{ .Params.status | urlize }}">{{ .Params.status }}</span>
+      </div>
+      <h3 class="ticket-title">{{ .Title }}</h3>
+      <p class="ticket-summary">{{ .Params.summary }}</p>
+      <div class="ticket-tags">
+        {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
+      </div>
+    </a>
+    {{ end }}
+    <div class="ticket-card ticket-card--future">
+      <div class="ticket-meta">
+        <span class="ticket-id">MB-00X</span>
+        <span class="status-badge status-backlog">Backlog</span>
+      </div>
+      <h3 class="ticket-title">More cases in progress</h3>
+      <p class="ticket-summary">New tickets get added as they're solved, not before. No roadmap promises — just a backlog, worked in priority order.</p>
+    </div>
+  </div>
+</section>
+{{ end }}

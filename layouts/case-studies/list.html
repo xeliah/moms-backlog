@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="backlog" id="backlog">
+  <div class="section-heading">
+    <h2>Backlog</h2>
+    <span class="section-note">Real problems. Shipped fixes. Honest status.</span>
+  </div>
+  <div class="ticket-list">
+    {{ range .Pages.ByParam "weight" }}
+    <a class="ticket-card" href="{{ .RelPermalink }}">
+      <div class="ticket-meta">
+        <span class="ticket-id">{{ .Params.ticket_id }}</span>
+        <span class="status-badge status-{{ .Params.status | urlize }}">{{ .Params.status }}</span>
+      </div>
+      <h3 class="ticket-title">{{ .Title }}</h3>
+      <p class="ticket-summary">{{ .Params.summary }}</p>
+      <div class="ticket-tags">
+        {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

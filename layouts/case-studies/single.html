@@ -1,0 +1,31 @@
+{{ define "main" }}
+<article class="case-study">
+  <a class="back-link" href="{{ "/" | relURL }}#backlog">← Backlog</a>
+
+  <div class="ticket-meta ticket-meta--large">
+    <span class="ticket-id">{{ .Params.ticket_id }}</span>
+    <span class="status-badge status-{{ .Params.status | urlize }}">{{ .Params.status }}</span>
+  </div>
+
+  <h1>{{ .Title }}</h1>
+  <p class="case-summary">{{ .Params.summary }}</p>
+
+  <div class="ticket-tags">
+    {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
+  </div>
+
+  {{ if .Params.download_url }}
+  <div class="toolkit-callout">
+    <div>
+      <span class="toolkit-label">Toolkit</span>
+      <p>Get the printable board used in this case study.</p>
+    </div>
+    <a class="toolkit-button" href="{{ .Params.download_url }}">Get the toolkit</a>
+  </div>
+  {{ end }}
+
+  <div class="case-body">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

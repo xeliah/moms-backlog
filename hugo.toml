@@ -1,0 +1,17 @@
+baseURL = "https://momsbacklog.com/"
+locale = "en-us"
+title = "Mom's Backlog"
+theme = ""
+paginate = 10
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  tagline = "A product manager's backlog for raising a neurodivergent kid."
+  positioning = "I ship products for a living. This is the backlog I keep for the hardest, least documented product I work on: parenting a neurodivergent, oppositional kid — as a woman, a PM, and a mom who thinks the two are not in tension, they're the same discipline."
+  author = "Mom's Backlog"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  noClasses = false
