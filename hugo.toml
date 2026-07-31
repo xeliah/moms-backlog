@@ -1,7 +1,6 @@
 baseURL = "https://momsbacklog.com/"
 locale = "en-us"
 title = "Mom's Backlog"
-theme = ""
 paginate = 10
 disableKinds = ["taxonomy", "term"]
 
