@@ -5,8 +5,8 @@ paginate = 10
 disableKinds = ["taxonomy", "term"]
 
 [params]
-  tagline = "A product manager's backlog for raising a strong-willed kid."
-  positioning = "I ship products for a living. This is the backlog I keep for the hardest, least documented product I work on: parenting a strong-willed, oppositional kid — as a woman, a PM, and a mom who thinks the two are not in tension, they're the same discipline."
+  tagline = "A product manager's backlog for raising a very strong-willed kid."
+  positioning = "Burnt-out parent, closet product manager, or both? Same job, different outfit. This is the backlog I keep for the hardest, least documented product I've ever worked on — proof that parenting and PM-ing run on the exact same skillset."
   author = "Mom's Backlog"
 
 [markup.goldmark.renderer]
